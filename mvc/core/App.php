@@ -9,10 +9,13 @@ class App {
     $currentParams = !empty($url[3]) ? array_slice($url, 3) : array();
     
     try{
-      $controller = new $currentController();      
+      $controller = new $currentController();
+      if(!method_exists($currentController, $currentAction)){
+        throw new Exception();
+      }
       call_user_func_array(array($controller, $currentAction), $currentParams);
     }catch(Exception $e){
-      $error = new ErrorController();
+      $error = new NotFoundController();
       $error->index(404);
     }
   }

@@ -1,5 +1,5 @@
 <?php
-class ErrorController extends Controller{
+class NotFoundController extends Controller{
   public function index($err){
     $this->loadTemplateWithView('404');
   }
