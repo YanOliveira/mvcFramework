@@ -6,12 +6,13 @@ abstract class Controller{
   }
     
   protected function loadView($view, $data = array()){
-    extract($data);
-    $view = strtolower($view);
-    require "views/".$view.".php";
+    extract($data);    
+    require "views/".strtolower($view).".php";
   }
 
   protected function loadTemplateWithView($view, $data = array()){
     require "views/template.php";
   }
+
+  protected abstract function index();
 }

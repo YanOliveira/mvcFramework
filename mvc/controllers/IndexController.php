@@ -5,4 +5,14 @@ class IndexController extends Controller{
     $teste = $this->loadModel("users");
     $teste->hello();
   }
+
+  public function teste($id, $nome){   
+    $data = array(
+      'id' => $id, 
+      'nome' => $nome
+    );
+    $this->loadTemplateWithView('teste', $data);    
+    $teste = $this->loadModel("users");
+    $teste->hello();
+  }
 }

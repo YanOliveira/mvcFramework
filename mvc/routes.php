@@ -2,5 +2,5 @@
 
 global $routes;
 $routes = array();
-// $routes['/home/{id}'] = '/home/index/:id';
+$routes['/index/teste/{id}/{nome}'] = '/index/teste/:id/:nome';
 
