@@ -1,7 +1,7 @@
 <?php
-class Conection{
+class Connection{
   private static $pdo;  
-  private function Conection(){
+  private function Connection(){
 
   }
 

@@ -4,6 +4,6 @@ abstract class Model{
   
   public function __construct(){    
     global $db;
-    $db = Conection::getInstance();    
+    $db = Connection::getInstance();    
   }    
 }
