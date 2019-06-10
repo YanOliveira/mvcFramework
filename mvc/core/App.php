@@ -1,5 +1,5 @@
 <?php
-class App {
+class App {    
   public function run(){
     $url = isset($_GET['url']) ? "/".$_GET['url'] : "/";               
     $url = $this->checkRoute($url);    
@@ -7,8 +7,8 @@ class App {
     $url = explode("/", $url);
     
   
-    $currentController = (!empty($url[1]) ? ucfirst($url[1]) : ucfirst(CONFIG_DEFAULT_CONTROLLER))."Controller";
-    $currentAction = !empty($url[2]) ? $url[2] : CONFIG_DEFAULT_ACTION;      
+    $currentController = (!empty($url[1]) ? ucfirst($url[1]) : ucfirst(DEFAULT_CONTROLLER))."Controller";
+    $currentAction = !empty($url[2]) ? $url[2] : DEFAULT_ACTION;      
     $currentParams = !empty($url[3]) ? array_slice($url, 3) : array();
     
     try{
@@ -46,5 +46,5 @@ class App {
       }
     }
     return $url;
-  }
+  }  
 }
