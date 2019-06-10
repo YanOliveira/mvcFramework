@@ -7,5 +7,5 @@ define("DB_PASS", "root");
 define('CHARSET', 'utf8');
 define("BASE_URL", "http://localhost/projects/b7/mvc/");
 
-define("DEFAULT_CONTROLLER", "home");
+define("DEFAULT_CONTROLLER", "index");
 define("DEFAULT_ACTION", "index");
