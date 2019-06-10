@@ -9,6 +9,6 @@ spl_autoload_register(function($class){
    else if(file_exists('core/'.$class.'.php')){
       require "core/".$class.".php";
    }else{
-      throw new Exception('Controller não encontrado.');
+      throw new Exception('Classe não encontrada.');
    }
 });
