@@ -1,19 +1,22 @@
 <?php
-abstract class Model{
-  protected $db;    
+abstract class Model{  
   
   public function __construct(){    
-    global $db;
-    $db = Connection::getInstance();    
+    global $pdo;
+    $pdo = Connection::getInstance();    
   }      
 
-  public function executeQuery($query, $params){
+  public function executeQuery($query, $params = null){
     global $pdo;
-    try {
-        $sql = $pdo->prepare($query);
-        $sql->execute($params);
+    try {                                       
+        $sql = $pdo->prepare($query);                 
+        $sql->execute($params);                
         if ($sql->rowCount() > 0) {
-            $data = $sql->fetch(PDO::FETCH_ASSOC);
+          if($sql->rowCount() > 1){
+            $data = $sql->fetchAll(PDO::FETCH_ASSOC);
+          }else{
+            $data[0] = $sql->fetch(PDO::FETCH_ASSOC);
+          }            
         } else {
             $data = array();
         }
@@ -21,7 +24,7 @@ abstract class Model{
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
     }
-  }
+  }  
 
   // public function executeQueryMultipleResult($query, $params){
   //   global $pdo;
