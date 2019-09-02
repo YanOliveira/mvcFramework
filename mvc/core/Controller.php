@@ -10,8 +10,8 @@ abstract class Controller{
     require "views/".strtolower($view).".php";
   }
 
-  protected function loadTemplateWithView($view, $data = array()){
-    require "views/template.php";
+  protected function loadTemplateWithView($template, $view, $data = array()){
+    require "views/templates/" . strtolower($template) . ".php";
   }
 
   protected abstract function index();
