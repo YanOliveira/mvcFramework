@@ -1,10 +1,9 @@
 <?php
 
 /**
- * @abstract Classe Controller 
+ * Classe Controller 
  * Padroniza o comportamento e alguns métodos para todos os controllers.
- * @package mvc
- * @subpackage core
+ * @package core
  * @version 1.0.0
  * @author Yan Oliveira <oliveira.yan02@gmail.com> 
  **/
