@@ -12,8 +12,8 @@ abstract class Controller{
   protected abstract function index();
 
   /**
-   * Função para instanciar um novo objeto Model.
-   * Deve ser passado como parâmetro o nome do model.
+   * Instancia um novo objeto Model.
+   * Recebe como parâmetro o nome do model.
    * Para instanciar o model UsersModel.php deve-se fazer o seguinte: 
    * Ex.: loadModel('Users');
    * @access protected
@@ -27,8 +27,8 @@ abstract class Controller{
   }
     
   /**
-   * Função para importar somente um arquivo de view, sem uso de template.
-   * Deve ser passado como parâmetro o nome do arquivo de view(que deve conter apenas letras minusculas) e um array contendo os dados que serão mostrados na view.
+   * Importa somente um arquivo de view, sem uso de template.
+   * Recebe como parâmetro o nome do arquivo de view(que deve conter apenas letras minusculas) e um array contendo os dados que serão mostrados na view.
    * Para importar a view view_file.php deve-se fazer o seguinte: 
    * Ex.: loadView('view_file', $data);
    * @access protected
@@ -42,8 +42,8 @@ abstract class Controller{
   }
 
   /**
-   * Função para importar um arquivo de view, junto com um arquivo de template.
-   * Deve ser passado como parâmetro o nome do arquivos de view e template(que devem conter apenas letras minusculas) e um array contendo os dados que serão mostrados na view.
+   * Importa um arquivo de view, junto com um arquivo de template.
+   * Recebe como parâmetro o nome do arquivos de view e template(que devem conter apenas letras minusculas) e um array contendo os dados que serão mostrados na view.
    * Para importar a view view_file.php dentro do template template_file.php deve-se fazer o seguinte: 
    * Ex.: loadViewWithTemplate('template_file', 'view_file', $data);
    * @access protected
