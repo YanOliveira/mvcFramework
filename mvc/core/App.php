@@ -1,5 +1,16 @@
 <?php
+/**
+ * Classe App 
+ * Controla o fluxo do MVC, identificando as rotas e atribuindo ao Controller correto.
+ * @package core
+ * @version 1.0.0
+ * @author Yan Oliveira <oliveira.yan02@gmail.com> 
+ **/
 class App {    
+  /**
+   * Instancia o Controller, executa o método, passando os parâmetros. De acordo com a url.   
+   * @access public      
+  **/ 
   public function run(){
     $url = isset($_GET['url']) ? "/".$_GET['url'] : "/";               
     $url = $this->checkRoute($url);    
@@ -21,6 +32,13 @@ class App {
     }
   }
 
+  /**
+   * Verifica a url e identica todas suas partes, separando o controller, o métodos e os parâmetros.
+   * Possibilita a obtenção dos parâmetros de acordo com definido no routes.php
+   * @access private
+   * @param String $url
+   * @return String $url
+  **/ 
   private function checkRoute($url){
     global $routes;
     foreach($routes as $key => $newurl){
