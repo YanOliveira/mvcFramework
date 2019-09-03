@@ -25,9 +25,13 @@ abstract class Model{
   **/ 
   protected function executeQuery($query, $params = null){
     global $pdo;
-    try {                                       
+    try {            
+      if(!empty($params)){
         $sql = $pdo->prepare($query);                 
         $sql->execute($params);                
+      }else{
+        $sql = $pdo->query($query);
+      }
         if ($sql->rowCount() > 0) {
           if($sql->rowCount() > 1){
             $data = $sql->fetchAll(PDO::FETCH_ASSOC);
