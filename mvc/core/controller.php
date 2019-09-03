@@ -7,7 +7,7 @@
  * @version 1.0.0
  * @author Yan Oliveira <oliveira.yan02@gmail.com> 
  **/
-abstract class Controller{
+abstract class controller{
 
   protected abstract function index();
 
@@ -22,7 +22,7 @@ abstract class Controller{
    * @example loadModel('Users')
   **/ 
   protected function loadModel($model){    
-    $model = ucfirst($model."Model");    
+    $model = strtolower($model."_model");    
     return new $model;
   }
     

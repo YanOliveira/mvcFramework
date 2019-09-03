@@ -1,5 +1,5 @@
 <?php
-class ImagesModel extends Model {
+class images_model extends model {
     public function upload($image) {
         try{            
             $allowedFormats = array('image/jpeg', 'image/jpg', 'image/png');

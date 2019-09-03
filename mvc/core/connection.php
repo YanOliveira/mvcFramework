@@ -6,7 +6,7 @@
  * @version 1.0.0
  * @author Yan Oliveira <oliveira.yan02@gmail.com> 
  **/
-class Connection{
+class connection{
   private static $pdo;  
   
   /**

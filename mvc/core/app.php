@@ -6,7 +6,7 @@
  * @version 1.0.0
  * @author Yan Oliveira <oliveira.yan02@gmail.com> 
  **/
-class App {    
+class app {    
   /**
    * Instancia o Controller, executa o método, passando os parâmetros. De acordo com a url.   
    * @access public      
@@ -16,10 +16,13 @@ class App {
     $url = $this->checkRoute($url);    
     $url = explode("/", $url);    
   
-    $currentController = (!empty($url[1]) ? ucfirst($url[1]) : ucfirst(DEFAULT_CONTROLLER))."Controller";
+    $currentController = (!empty($url[1]) ? strtolower($url[1]) : strtolower(DEFAULT_CONTROLLER))."_controller";
     $currentAction = !empty($url[2]) ? $url[2] : DEFAULT_ACTION;      
     $currentParams = !empty($url[3]) ? array_slice($url, 3) : array();
     
+    // echo $currentController;
+    // exit;
+
     try{
       $controller = new $currentController();
       if(!method_exists($currentController, $currentAction)){
@@ -27,7 +30,7 @@ class App {
       }
       call_user_func_array(array($controller, $currentAction), $currentParams);
     }catch(Exception $e){
-      $error = new NotFoundController();
+      $error = new notfound_controller();
       $error->index(404);
     }
   }

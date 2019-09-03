@@ -6,7 +6,7 @@
  * @version 1.0.0
  * @author Yan Oliveira <oliveira.yan02@gmail.com> 
  **/
-class Slug {
+class slug {
   /**
    * Cria um slug pattern a partir de um texto.
    * Recebe como parâmetro um texto.

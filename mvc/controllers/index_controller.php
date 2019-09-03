@@ -1,11 +1,11 @@
 <?php
-class IndexController extends Controller{
+class index_controller extends controller{
   public function index(){     
     $this->loadTemplateWithView('index', 'index');      
   }  
 
   public function galery(){    
-    $images = $this->loadModel('Images');    
+    $images = $this->loadModel('images');    
 
     if(!empty($_FILES['image'])){      
       $images->upload($_FILES['image']);      
