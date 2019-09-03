@@ -1,10 +1,20 @@
 <?php
+/**
+ * Classe Connection 
+ * Realiza a conexão com o DB, usando PDO e Singleton.
+ * @package core
+ * @version 1.0.0
+ * @author Yan Oliveira <oliveira.yan02@gmail.com> 
+ **/
 class Connection{
   private static $pdo;  
-  private function Connection(){
-
-  }
-
+  
+  /**
+   * Retorna a instância da conexão com o DB, se não houver cria uma.       
+   * Ex.: $pdo = Connection::getInstance();
+   * @access public   
+   * @return PDO   
+  **/ 
   public static function getInstance(){    
     if(!isset(self::$pdo)){      
       try{        
