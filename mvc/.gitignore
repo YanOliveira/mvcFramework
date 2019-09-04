@@ -1,1 +1,3 @@
-/uploads/*
+/uploads
+/vendor
+composer.lock
