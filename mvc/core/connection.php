@@ -21,7 +21,8 @@ class connection{
         $opcoes = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8', PDO::ATTR_PERSISTENT => TRUE);  
         self::$pdo = new PDO("mysql:host=" . DB_HOST . "; dbname=" . DB_NAME . "; charset=" . CHARSET . ";", DB_USER, DB_PASS, $opcoes); 
       }catch(PDOException $e){
-        echo "Erro: ".$e->getMessage();
+        new log("DB", $e->getMessage());
+        header("Location: ".BASE_URL."error/500");
         exit;
       }
     }

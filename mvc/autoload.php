@@ -8,6 +8,9 @@ spl_autoload_register(function($class){
    }
    else if(file_exists('core/'.$class.'.php')){
       require "core/".$class.".php";
+   }
+   else if(file_exists('helpers/'.$class.'.php')){
+      require "helpers/".$class.".php";
    }else{
       throw new Exception('Classe não encontrada.');
    }
