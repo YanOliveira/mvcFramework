@@ -8,9 +8,6 @@
  * @author Yan Oliveira <oliveira.yan02@gmail.com> 
  **/
 abstract class controller{
-
-  protected abstract function index();
-
   /**
    * Instancia um novo objeto Model.
    * Recebe como parâmetro o nome do model.

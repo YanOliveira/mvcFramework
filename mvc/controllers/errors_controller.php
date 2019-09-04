@@ -1,9 +1,5 @@
 <?php
 class errors_controller extends controller{  
-  public function index($err = null){
-    
-  }
-
   public function notfound(){
     $this->loadTemplateWithView('index', 'errors/404');
   }
