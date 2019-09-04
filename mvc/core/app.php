@@ -30,8 +30,8 @@ class app {
       }
       call_user_func_array(array($controller, $currentAction), $currentParams);
     }catch(Exception $e){
-      $error = new notfound_controller();
-      $error->index(404);
+      $error = new errors_controller();
+      $error->notfound();
     }
   }
 

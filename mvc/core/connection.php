@@ -19,10 +19,10 @@ class connection{
     if(!isset(self::$pdo)){      
       try{        
         $opcoes = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8', PDO::ATTR_PERSISTENT => TRUE);  
-        self::$pdo = new PDO("mysql:host=" . DB_HOST . "; dbname=" . DB_NAME . "; charset=" . CHARSET . ";", DB_USER, DB_PASS, $opcoes); 
+        self::$pdo = new PDO("mysql:host=" . DB_HOST . "; dbname=asdasd; charset=" . CHARSET . ";", DB_USER, DB_PASS, $opcoes); 
       }catch(PDOException $e){
         new log("DB", $e->getMessage());
-        header("Location: ".BASE_URL."error/500");
+        header("Location: ".BASE_URL."errors/internal_server");
         exit;
       }
     }
