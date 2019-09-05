@@ -18,7 +18,7 @@
 
   <?php
 if (!empty($images)) {
-    foreach ($images as $image) {?>
+  foreach ($images as $image) {?>
         <img width='100' src="<?=BASE_URL . $image['url'];?>" title="<?=$image['name'];?>">
         <br>
       <?php }
