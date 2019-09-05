@@ -6,11 +6,11 @@
  * @version 1.0.0
  * @author Yan Oliveira <oliveira.yan02@gmail.com> 
  **/
-abstract class model{  
+abstract class Model{  
   
   public function __construct(){    
     global $pdo;
-    $pdo = connection::getInstance();    
+    $pdo = Connection::getInstance();    
   }      
 
   /**

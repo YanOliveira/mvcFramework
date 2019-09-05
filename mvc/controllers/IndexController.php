@@ -1,5 +1,5 @@
 <?php
-class index_controller extends controller{
+class IndexController extends Controller{
   public function index(){     
     $this->loadTemplateWithView('index', 'index');      
   }  

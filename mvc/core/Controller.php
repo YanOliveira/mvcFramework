@@ -7,7 +7,7 @@
  * @version 1.0.0
  * @author Yan Oliveira <oliveira.yan02@gmail.com> 
  **/
-abstract class controller{
+abstract class Controller{
   /**
    * Instancia um novo objeto Model.
    * Recebe como parâmetro o nome do model.
@@ -19,7 +19,7 @@ abstract class controller{
    * @example loadModel('Users')
   **/ 
   protected function loadModel($model){    
-    $model = strtolower($model."_model");    
+    $model = ucfirst($model."Model");    
     return new $model;
   }
     
