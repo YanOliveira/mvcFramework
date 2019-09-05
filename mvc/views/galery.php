@@ -10,19 +10,19 @@
   <fieldset>
   <form action="" method="POST" enctype='multipart/form-data'>
     <input type="file" name='image'>
-    <input type="submit" value="Enviar">  
-  </form>  
+    <input type="submit" value="Enviar">
+  </form>
   </fieldset>
 
   <br><br>
 
   <?php
-    if(!empty($images)){
-      foreach($images as $image){ ?>
-        <img width='100' src="<?=BASE_URL.$image['url']?>" title="<?=$image['name']?>">        
+if (!empty($images)) {
+    foreach ($images as $image) {?>
+        <img width='100' src="<?=BASE_URL . $image['url'];?>" title="<?=$image['name'];?>">
         <br>
       <?php }
-    }
-  ?>
+}
+?>
 </body>
 </html>

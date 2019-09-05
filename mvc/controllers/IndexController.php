@@ -1,22 +1,25 @@
 <?php
-class IndexController extends Controller{
-  public function index(){     
-    $this->loadTemplateWithView('index', 'index');      
-  }  
+class IndexController extends Controller
+{
+    public function index()
+    {
+        $this->loadTemplateWithView('index', 'index');
+    }
 
-  public function galery(){    
-    $images = $this->loadModel('images');    
+    public function galery()
+    {
+        $images = $this->loadModel('images');
 
-    if(!empty($_FILES['image'])){      
-      $images->upload($_FILES['image']);      
-    }        
+        if (!empty($_FILES['image'])) {
+            $images->upload($_FILES['image']);
+        }
 
-    $image = $images->getAllImages();
+        $image = $images->getAllImages();
 
-    $data = array(
-      'images' => $image,
-    );
+        $data = array(
+            'images' => $image,
+        );
 
-    $this->loadTemplateWithView('index', 'galery', $data);          
-  }
+        $this->loadTemplateWithView('index', 'galery', $data);
+    }
 }
