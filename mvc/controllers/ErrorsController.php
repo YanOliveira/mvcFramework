@@ -4,7 +4,7 @@ class ErrorsController extends Controller{
     $this->loadTemplateWithView('index', 'errors/404');
   }
 
-  public function internal_server(){    
+  public function internal(){    
     $this->loadTemplateWithView('index', 'errors/500');
   }
 }

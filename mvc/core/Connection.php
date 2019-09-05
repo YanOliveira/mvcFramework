@@ -22,7 +22,7 @@ class Connection{
         self::$pdo = new PDO("mysql:host=" . DB_HOST . "; dbname=" . DB_NAME . "; charset=" . CHARSET . ";", DB_USER, DB_PASS, $opcoes); 
       }catch(PDOException $e){
         new log("DB", $e->getMessage());
-        header("Location: ".BASE_URL."errors/internal_server");
+        header("Location: ".BASE_URL."errors/internal");
         exit;
       }
     }
