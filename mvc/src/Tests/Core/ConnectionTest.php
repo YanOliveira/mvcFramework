@@ -16,4 +16,8 @@ class ConnectionTest extends TestCase
   {
     $this->assertNotEmpty(Connection::getInstance());
   }
+  public function testGetInstanceTypeReturns()
+  {
+    $this->assertInternalType('object', Connection::getInstance());
+  }
 }
