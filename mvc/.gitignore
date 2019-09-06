@@ -1,6 +1,6 @@
-!/public/Uploads
-!/public/Uploads/*
-!/public/Uploads/*/*
+public/Uploads/*
+!public/Uploads/index.php
+
 /vendor
 composer.lock
 /Logs

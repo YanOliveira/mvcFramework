@@ -18,13 +18,10 @@ class Images extends Model
       if (!file_exists(BASE_DIR . "/public/Uploads")) {
         mkdir(BASE_DIR . "/public/Uploads");
       }
-      if (!file_exists(BASE_DIR . "/public/Uploads/images")) {
-        mkdir(BASE_DIR . "/public/Uploads/images");
-      }
       move_uploaded_file(
-        $image['tmp_name'], BASE_DIR . '/public/Uploads/images/' . $image['name']
+        $image['tmp_name'], BASE_DIR . '/public/Uploads/' . $image['name']
       );
-      $url = 'public/Uploads/images/' . $image['name'];
+      $url = '/Uploads/' . $image['name'];
       $sql = "insert into images (name, url) values (?, ?)";
       $teste = $this->executeQuery($sql, array($image['name'], $url));
       if ($teste) {
