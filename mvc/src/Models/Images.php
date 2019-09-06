@@ -1,8 +1,8 @@
 <?php
-namespace Models;
+namespace src\Models;
 
-use \Core\Model;
 use \PDOException;
+use \src\Core\Model;
 
 class Images extends Model
 {
@@ -15,16 +15,16 @@ class Images extends Model
       }
 
       $image['name'] = explode('.', $image['name'])[0] . '_' . md5(time() . rand(0, 999)) . '.jpg';
-      if (!file_exists(BASE_DIR . "/Uploads")) {
-        mkdir(BASE_DIR . "/Uploads");
+      if (!file_exists(BASE_DIR . "/public/Uploads")) {
+        mkdir(BASE_DIR . "/public/Uploads");
       }
-      if (!file_exists(BASE_DIR . "/Uploads/images")) {
-        mkdir(BASE_DIR . "/Uploads/images");
+      if (!file_exists(BASE_DIR . "/public/Uploads/images")) {
+        mkdir(BASE_DIR . "/public/Uploads/images");
       }
       move_uploaded_file(
-        $image['tmp_name'], BASE_DIR . '/Uploads/images/' . $image['name']
+        $image['tmp_name'], BASE_DIR . '/public/Uploads/images/' . $image['name']
       );
-      $url = BASE_DIR . '/Uploads/images/' . $image['name'];
+      $url = 'public/Uploads/images/' . $image['name'];
       $sql = "insert into images (name, url) values (?, ?)";
       $teste = $this->executeQuery($sql, array($image['name'], $url));
       if ($teste) {

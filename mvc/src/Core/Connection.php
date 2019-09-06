@@ -1,8 +1,8 @@
 <?php
-namespace Core;
+namespace src\Core;
 
-use \Helper\Log;
 use \PDO;
+use \src\Helper\Log;
 
 /**
  * Classe Connection

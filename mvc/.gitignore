@@ -1,4 +1,6 @@
-/Uploads
+!/public/Uploads
+!/public/Uploads/*
+!/public/Uploads/*/*
 /vendor
 composer.lock
 /Logs

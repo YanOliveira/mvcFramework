@@ -1,10 +1,10 @@
 <?php
-namespace Core;
+namespace src\Core;
 
-use \Core\Connection;
-use \Helpers\Log;
 use \PDO;
 use \PDOException;
+use \src\Core\Connection;
+use \src\Helpers\Log;
 
 /**
  * Classe Model

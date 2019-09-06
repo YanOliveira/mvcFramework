@@ -1,5 +1,5 @@
 <?php
-namespace Core;
+namespace src\Core;
 
 /**
  * Classe Controller
@@ -22,7 +22,7 @@ abstract class Controller
    **/
   protected function loadModel($model)
   {
-    $model = "\Models\\" . ucfirst($model);
+    $model = "\src\\Models\\" . ucfirst($model);
     return new $model;
   }
 
@@ -39,7 +39,7 @@ abstract class Controller
   protected function loadView($view, $data = array())
   {
     extract($data);
-    require "Views/" . strtolower($view) . ".php";
+    require BASE_DIR . "/src/Views/" . strtolower($view) . ".php";
   }
 
   /**
@@ -55,6 +55,6 @@ abstract class Controller
    **/
   protected function loadTemplateWithView($template, $view, $data = array())
   {
-    require "Views/templates/" . strtolower($template) . ".php";
+    require BASE_DIR . "/src/Views/templates/" . strtolower($template) . ".php";
   }
 }

@@ -1,7 +1,7 @@
 <?php
-namespace Controllers;
+namespace src\Controllers;
 
-use \Core\Controller;
+use \src\Core\Controller;
 
 class Errors extends Controller
 {

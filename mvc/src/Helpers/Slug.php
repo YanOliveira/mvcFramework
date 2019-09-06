@@ -1,5 +1,5 @@
 <?php
-namespace Helpers;
+namespace src\Helpers;
 
 /**
  * Helper Slug

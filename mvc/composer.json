@@ -4,11 +4,11 @@
   },
   "autoload": {
     "psr-4": {
-      "Controllers\\": "Controllers/",
-      "Models\\": "Models/",
-      "Core\\": "Core/",
-      "Helpers\\": "Helpers/",
-      "Tests\\": "Tests"
+      "src\\Controllers\\": "src/Controllers/",
+      "src\\Models\\": "src/Models/",
+      "src\\Core\\": "src/Core/",
+      "src\\Helpers\\": "src/Helpers/",
+      "src\\Tests\\": "src/Tests"
     }
   },
   "require-dev": {

@@ -1,7 +1,7 @@
 <?php
-namespace Core;
+namespace src\Core;
 
-use \Controllers\Errors;
+use \src\Controllers\Errors;
 
 /**
  * Classe App
@@ -22,7 +22,7 @@ class App
     $url = $this->checkRoute($url);
     $url = explode("/", $url);
 
-    $currentController = "Controllers\\" . (!empty($url[1]) ? ucfirst($url[1]) : ucfirst(DEFAULT_CONTROLLER));
+    $currentController = "src\\Controllers\\" . (!empty($url[1]) ? ucfirst($url[1]) : ucfirst(DEFAULT_CONTROLLER));
     $currentAction = !empty($url[2]) ? strtolower($url[2]) : strtolower(DEFAULT_ACTION);
     $currentParams = !empty($url[3]) ? array_slice($url, 3) : array();
     try {
