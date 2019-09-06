@@ -1,4 +1,4 @@
-Uploads
-vendor
+/Uploads
+/vendor
 composer.lock
-Logs
+/Logs
