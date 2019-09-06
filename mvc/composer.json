@@ -7,7 +7,11 @@
       "Controllers\\": "Controllers/",
       "Models\\": "Models/",
       "Core\\": "Core/",
-      "Helpers\\": "Helpers/"
+      "Helpers\\": "Helpers/",
+      "Tests\\": "Tests"
     }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.5"
   }
 }
