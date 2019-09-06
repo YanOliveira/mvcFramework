@@ -1,4 +1,9 @@
 <?php
+namespace Core;
+
+use \Helper\Log;
+use \PDO;
+
 /**
  * Classe Connection
  * Realiza a conexão com o DB, usando PDO e Singleton.
@@ -22,7 +27,7 @@ class Connection
         $opcoes = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8', PDO::ATTR_PERSISTENT => true);
         self::$pdo = new PDO("mysql:host=" . DB_HOST . "; dbname=" . DB_NAME . "; charset=" . CHARSET . ";", DB_USER, DB_PASS, $opcoes);
       } catch (PDOException $e) {
-        new log("DB", $e->getMessage());
+        new Log("DB_CONNECTION", $e->getMessage());
         header("Location: " . BASE_URL . "errors/internal");
         exit;
       }

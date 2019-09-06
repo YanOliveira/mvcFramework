@@ -1,5 +1,9 @@
 <?php
-class ErrorsController extends Controller
+namespace Controllers;
+
+use \Core\Controller;
+
+class Errors extends Controller
 {
   public function notfound()
   {

@@ -1,4 +1,8 @@
 <?php
+namespace Core;
+
+use \Controllers\Errors;
+
 /**
  * Classe App
  * Controla o fluxo do MVC, identificando as rotas e atribuindo ao Controller correto.
@@ -18,7 +22,7 @@ class App
     $url = $this->checkRoute($url);
     $url = explode("/", $url);
 
-    $currentController = (!empty($url[1]) ? ucfirst($url[1]) : ucfirst(DEFAULT_CONTROLLER)) . "Controller";
+    $currentController = "Controllers\\" . (!empty($url[1]) ? ucfirst($url[1]) : ucfirst(DEFAULT_CONTROLLER));
     $currentAction = !empty($url[2]) ? strtolower($url[2]) : strtolower(DEFAULT_ACTION);
     $currentParams = !empty($url[3]) ? array_slice($url, 3) : array();
     try {
@@ -28,7 +32,7 @@ class App
       }
       call_user_func_array(array($controller, $currentAction), $currentParams);
     } catch (Exception $e) {
-      $error = new ErrorsController();
+      $error = new Errors();
       $error->notfound();
     }
   }

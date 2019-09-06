@@ -1,4 +1,11 @@
 <?php
+namespace Core;
+
+use \Core\Connection;
+use \Helpers\Log;
+use \PDO;
+use \PDOException;
+
 /**
  * Classe Model
  * Padroniza o comportamento e alguns métodos para todos os models.
@@ -34,6 +41,9 @@ abstract class Model
       } else {
         $sql = $pdo->query($query);
       }
+      if (empty($sql)) {
+        throw new PDOException("Unable to query: '" . $query . "'");
+      }
       if ($sql->rowCount() > 0) {
         if ($sql->rowCount() > 1) {
           $data = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -45,7 +55,7 @@ abstract class Model
       }
       return $data;
     } catch (PDOException $e) {
-      echo "Erro: " . $e->getMessage();
+      new Log("PDO_QUERY", $e->getMessage());
     }
   }
 }

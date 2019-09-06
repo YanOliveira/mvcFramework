@@ -1,5 +1,13 @@
 {
   "require": {
     "monolog/monolog": "1.24.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Controllers\\": "Controllers/",
+      "Models\\": "Models/",
+      "Core\\": "Core/",
+      "Helpers\\": "Helpers/"
+    }
   }
 }

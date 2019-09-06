@@ -1,4 +1,5 @@
 <?php
+namespace Core;
 
 /**
  * Classe Controller
@@ -21,7 +22,7 @@ abstract class Controller
    **/
   protected function loadModel($model)
   {
-    $model = ucfirst($model . "Model");
+    $model = "\Models\\" . ucfirst($model);
     return new $model;
   }
 
@@ -38,7 +39,7 @@ abstract class Controller
   protected function loadView($view, $data = array())
   {
     extract($data);
-    require "views/" . strtolower($view) . ".php";
+    require "Views/" . strtolower($view) . ".php";
   }
 
   /**
@@ -54,6 +55,6 @@ abstract class Controller
    **/
   protected function loadTemplateWithView($template, $view, $data = array())
   {
-    require "views/templates/" . strtolower($template) . ".php";
+    require "Views/templates/" . strtolower($template) . ".php";
   }
 }

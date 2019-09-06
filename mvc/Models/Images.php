@@ -1,5 +1,10 @@
 <?php
-class ImagesModel extends Model
+namespace Models;
+
+use \Core\Model;
+use \PDOException;
+
+class Images extends Model
 {
   public function upload($image)
   {

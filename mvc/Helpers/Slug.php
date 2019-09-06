@@ -1,4 +1,6 @@
 <?php
+namespace Helpers;
+
 /**
  * Helper Slug
  * Criação de slug patterns para urls.
@@ -6,7 +8,7 @@
  * @version 1.0.0
  * @author Yan Oliveira <oliveira.yan02@gmail.com>
  **/
-class SlugHelper
+class Slug
 {
   /**
    * Cria um slug pattern a partir de um texto.
