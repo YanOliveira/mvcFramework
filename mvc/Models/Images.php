@@ -15,8 +15,16 @@ class Images extends Model
       }
 
       $image['name'] = explode('.', $image['name'])[0] . '_' . md5(time() . rand(0, 999)) . '.jpg';
-      move_uploaded_file($image['tmp_name'], 'Uploads/images/' . $image['name']);
-      $url = 'Uploads/images/' . $image['name'];
+      if (!file_exists(BASE_DIR . "/Uploads")) {
+        mkdir(BASE_DIR . "/Uploads");
+      }
+      if (!file_exists(BASE_DIR . "/Uploads/images")) {
+        mkdir(BASE_DIR . "/Uploads/images");
+      }
+      move_uploaded_file(
+        $image['tmp_name'], BASE_DIR . '/Uploads/images/' . $image['name']
+      );
+      $url = BASE_DIR . '/Uploads/images/' . $image['name'];
       $sql = "insert into images (name, url) values (?, ?)";
       $teste = $this->executeQuery($sql, array($image['name'], $url));
       if ($teste) {
