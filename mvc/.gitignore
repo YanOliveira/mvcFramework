@@ -1,4 +1,4 @@
-Uploads/*
+
 /vendor
 composer.lock
 errors.log
